@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Arrays</title>
+</head>
+
+<body>
+   <script>
+      // using object constructors
+      const students = new Array("emma", "destiny", "micheal");
+      console.log(students);
+
+      //using the normal way
+      let classes = ["ss3", "ss4", "ss5"];
+      // manually add items to an array
+      classes[3] = "jss3";
+      //using the push function
+      classes.push("jss2");
+      //push values to the beginning of an array
+      classes.unshift("jss1");
+      //element to insert at the beginning of an array
+      console.log(classes);
+
+      // check if it an array
+      if (Array.isArray(classes)) {
+         console.log("yes");
+      } else {
+         console.log("no");
+      }
+
+      let party = ["PDP", "APC", "LP"];
+      let string_party = "PDP/APC/LP";
+      let a = string_party.split("/");
+
+      console.log(a[1]);
+
+      party.push("NNPC");
+      party.unshift("APP");
+      console.log(party);
+      console.log(party.indexOf("LP"));
+
+   </script>
+</body>
+
+</html>

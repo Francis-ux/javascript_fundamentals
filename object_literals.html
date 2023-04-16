@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Object</title>
+</head>
+
+<body>
+   <script>
+      //an object is a key value pair
+      const person = {
+         first_name: "Francis",
+         last_name: "Micheal",
+         age: 67,
+         //array
+         hobbies: ["dancing", "singing", "running"],
+         //embedded object
+         address: {
+            street: "No 17 kingsley street",
+            State: "Delta state",
+            city: "Agbor",
+         },
+      };
+
+      console.log(person.first_name, person.last_name);
+      console.log(person.hobbies[2]);
+      console.log(person.address.street);
+
+      //destructuring
+
+      //here we pulling the first_name and last name from the person object
+      const {
+         first_name,
+         last_name,
+         address: { city, street },
+      } = person;
+
+      console.log(city, street, first_name, last_name);
+
+      //directly adding properties
+      person.email = "kingmicheal744@gmail.com";
+
+      console.log(person);
+
+      //array of object
+      //object literals
+      const todos = [
+         {
+            id: 1,
+            text: "take out trash",
+            isCompleted: false,
+         },
+         {
+            id: 2,
+            text: "Buy Television",
+            isCompleted: true,
+         },
+         {
+            id: 3,
+            text: "Meeting with boss",
+            isCompleted: true,
+         },
+      ];
+      console.log(todos);
+      console.log(todos[2].text);
+
+   </script>
+</body>
+
+</html>

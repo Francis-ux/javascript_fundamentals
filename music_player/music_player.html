@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music player</title>
+    <link rel="stylesheet" href="music_player.css" />
+    <link
+      rel="stylesheet"
+      href="font_awesome_6/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="main-container">
+        <div class="sub-container">
+          <div class="">
+            <div class="song-tile-and-artist">
+              <div class="center">
+                <span class="now-playing"> Not Playing </span>
+              </div>
+              <div id="song-title">
+                <!-- Better man -->
+              </div>
+              <div id="song-artist">
+                <!-- Westlife -->
+              </div>
+            </div>
+          </div>
+
+          <div class="buttons center">
+            <div class="all_songs_icon top-bar-icon">
+              <i class="fa fa-bars fa-1x"></i>
+            </div>
+            <div class="random-track top-bar-icon">
+              <i class="fa fa-random fa-1x" title="random"></i>
+            </div>
+            <div class="prev-track top-bar-icon">
+              <i class="fa fa-step-backward fa-1x"></i>
+            </div>
+            <div class="playpause-track top-bar-icon">
+              <i class="fa fa-play-circle fa-2x" title="play"></i>
+            </div>
+            <div class="next-track top-bar-icon">
+              <i class="fa fa-step-forward fa-1x"></i>
+            </div>
+            <div class="repeat-track top-bar-icon">
+              <i class="fa fa-repeat fa-1x" title="repeat"></i>
+            </div>
+            <div class="songs-control center">
+              <div class="current-time">00:00</div>
+              <input
+                type="range"
+                min="1"
+                max="100"
+                value="0"
+                class="seek_slider"
+              />
+              <div class="total-duration">00:00</div>
+            </div>
+            <div class="center">
+              <i class="fa fa-volume-down"></i>
+              <input type="range" value="100" class="volume_slider" />
+              <i class="fa fa-volume-up"></i>
+            </div>
+          </div>
+          <div style="display: none" class="center">
+            <div class="image-side"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="music_player.js"></script>
+  </body>
+</html>

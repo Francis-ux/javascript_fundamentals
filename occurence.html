@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+
+<body>
+
+
+   <script>
+      const data = 'francis/destiny/francis';
+      let split_data = data.split('/');
+      const names = ['francis', 'francis', 'destiny', 'micheal', 'destiny', 'destiny', 'emmanuel'];
+      function countOccurrence(names) {
+         let occurrences = [];
+         names.forEach(function (values) {
+            if (occurrences[values]) {
+               occurrences[values]++;
+            } else {
+               occurrences[values] = 1;
+            }
+         })
+         return occurrences;
+      }
+      console.log(countOccurrence(names));
+   </script>
+</body>
+
+</html>

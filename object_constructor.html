@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Object</title>
+</head>
+
+<body>
+   <script>
+      //constructor function
+      function Person(first_name, last_name, age, date) {
+         this.first_name = first_name;
+         this.last_name = last_name;
+         this.age = age;
+         this.date = new Date(date);
+         this.get_full_name = function () {
+            return `${first_name} ${last_name}`;
+         }
+      }
+      // instantiate the object 
+      const person1 = new Person('Destiny', 'Micheal', '34 years of age', '4-3-1980');
+      const person2 = new Person('Francis', 'Nnabuife', '46 years of age', '03-03-2023');
+      console.log(person1.date, person2.last_name);
+      console.log(person1.get_full_name())
+   </script>
+</body>
+
+</html>
