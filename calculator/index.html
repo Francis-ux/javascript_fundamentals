@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="font_awesome_6/css/all.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3">
+                <div class="card">
+                    <div class="card-header d-flex">
+                        <div>
+                            <i class="fa fa-calculator" aria-hidden="true"></i> Calculator
+                        </div>
+                        <div>
+                            <button onclick="toggleMode()" class="btn" id="mode" title="DarkMode"> <i class="fa fa-moon"
+                                    aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-body pt-1 pb-1">
+                        <div class="row">
+
+                            <div class="col-12 mb-2 " id="display">
+                                0
+                            </div>
+                            <div class="col-12" id="button_side">
+                                <div class="row">
+                                    <div class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">%</button>
+                                    </div>
+                                    <div class="col-3 p-0 m-0">
+                                        <button class="border operators_btn"> <i class="fa fa-check"
+                                                aria-hidden="true"></i> </button>
+                                    </div>
+                                    <div class="col-3 p-0 m-0">
+                                        <button class="border operators_btn"> x<sup>2</sup> </button>
+                                    </div>
+                                    <div class="col-3 p-0 m-0">
+                                        <button class="border operators_btn"><sup>1</sup>/<sub>2</sub></button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">CE</button>
+                                    </div>
+                                    <div class="col-3 p-0 m-0">
+                                        <button onclick="clearAll()" class="border operators_btn">C</button>
+                                    </div>
+                                    <div class="col-3 p-0 m-0">
+                                        <button onclick="backSpace()" class="border operators_btn"> <i
+                                                class="fa fa-times-circle" aria-hidden="true"></i> </button>
+                                    </div>
+                                    <div onclick="set_operator('/')" class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">/</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div onclick="display_value('7')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">7</button>
+                                    </div>
+                                    <div onclick="display_value('8')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">8</button>
+                                    </div>
+                                    <div onclick="display_value('9')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">9</button>
+                                    </div>
+                                    <div onclick="set_operator('*')" class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">x</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div onclick="display_value('4')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">4</button>
+                                    </div>
+                                    <div onclick="display_value('5')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">5</button>
+                                    </div>
+                                    <div onclick="display_value('6')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">6</button>
+                                    </div>
+                                    <div onclick="set_operator('-')" class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">-</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div onclick="display_value('1')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">1</button>
+                                    </div>
+                                    <div onclick="display_value('2')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">2</button>
+                                    </div>
+                                    <div onclick="display_value('3')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">3</button>
+                                    </div>
+                                    <div onclick="set_operator('+')" class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">+_</button>
+                                    </div>
+                                    <div onclick="display_value('0')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">0</button>
+                                    </div>
+                                    <div onclick="display_value('.')" class="col-3 p-0 m-0">
+                                        <button class="border numbers_btn">.</button>
+                                    </div>
+                                    <div onclick="solve()" class="col-3 p-0 m-0">
+                                        <button class="border operators_btn">=</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+
+</html>
