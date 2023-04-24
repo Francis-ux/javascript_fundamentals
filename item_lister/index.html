@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Item Listener</title>
+   <link rel="stylesheet" href="main.css">
+   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+   <div class="main-container bg-success w-100 h-25" id="main-header">
+      <div class="container p-4">
+         <div class="row">
+            <div class="col">
+               <span class="text-light h1 " id="header-title">Item Lister</span>
+            </div>
+            <div class="col">
+               <input type="text" name="search" id="filter" class="form-control" placeholder="Search items......">
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="container">
+      <div class="row ">
+         <div class="col">
+            <div class="card">
+               <div class="card-body">
+                  <p class="h1">Add Items</p>
+                  <form id="form" class="row g-3">
+                     <div class="col">
+                        <input type="text" class="form-control" id="item" placeholder="">
+                     </div>
+                     <div class="col">
+                        <button type="submit" class="btn btn-dark mb-3">Submit</button>
+                     </div>
+                  </form>
+                  <p class="h1">Items</p>
+                  <ul id="items" class="list-group">
+                     <li class="list-group-item">Item 1<button
+                           class="btn btn-danger btn-sm float-right delete">X</button></li>
+                     <li class="list-group-item">Item 2 <button
+                           class="btn btn-danger btn-sm float-right delete">X</button></li>
+                     <li class="list-group-item">Item 3 <button
+                           class="btn btn-danger btn-sm float-right delete">X</button> </li>
+                     <li class="list-group-item">Item 4 <button
+                           class="btn btn-danger btn-sm float-right delete">X</button></li>
+                  </ul>
+                  <div id="output">
+
+                  </div>
+                  <div class="bar">
+                     <p class="text"></p>
+                  </div>
+               </div>
+               <br>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script src="main.js"></script>
+</body>
+
+</html>
