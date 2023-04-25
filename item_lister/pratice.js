@@ -12,22 +12,26 @@ function add_items(e) {
   e.preventDefault();
   // new list item
   let new_item = document.querySelector("#item");
-  //create li element
-  let li = document.createElement("li");
-  //add class name to element
-  li.className = "list-group-item";
-  //append child and create text node
-  li.appendChild(document.createTextNode(new_item.value));
-  // create delete button element
-  let delete_btn = document.createElement("button");
-  // create class name for delete btn
-  delete_btn.className = "btn btn-danger btn-sm float-right delete";
-  //append and create text node to delete btn
-  delete_btn.appendChild(document.createTextNode("X"));
-  //append delete btn to li
-  li.appendChild(delete_btn);
-  //append li to item lists
-  item_lists.appendChild(li);
+  if (new_item.value != "") {
+    //create li element
+    let li = document.createElement("li");
+    //add class name to element
+    li.className = "list-group-item";
+    //append child and create text node
+    li.appendChild(document.createTextNode(new_item.value));
+    // create delete button element
+    let delete_btn = document.createElement("button");
+    // create class name for delete btn
+    delete_btn.className = "btn btn-danger btn-sm float-right delete";
+    //append and create text node to delete btn
+    delete_btn.appendChild(document.createTextNode("X"));
+    //append delete btn to li
+    li.appendChild(delete_btn);
+    //append li to item lists
+    item_lists.appendChild(li);
+    // reset the new item value to empty
+    new_item.value = "";
+  }
 }
 // remove items function
 function remove_item(e) {
