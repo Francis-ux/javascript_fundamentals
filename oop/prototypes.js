@@ -32,8 +32,11 @@ let book2 = new Books("Book Two", "Mary Doe", "2006");
 
 // // console.log(Object.keys(book1));
 // console.log(book2.get_age());
-
+Books.prototype.change_year = function (new_year) {
+  this.year = new_year;
+};
 console.log(book1);
 console.log(book1.get_age());
 book1.revise("2022");
+book1.change_year("2003");
 console.log(book1.get_age());
