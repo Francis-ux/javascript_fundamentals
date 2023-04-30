@@ -73,6 +73,6 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
 // Event:Remove a book
 
 document.querySelector("#book-list").addEventListener("click", (e) => {
-   e.preventDefault();
+  e.preventDefault();
   UI.deleteBooks(e.target);
 });
