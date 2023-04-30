@@ -19,10 +19,10 @@ function Magazine(title, author, year, month) {
   this.month = month;
 }
 
-//Inherit Prototype
 //Instantiate Magazine object
-// const mag1 = new Magazine("Mag 1", "john Mike", "2008", "june");
-// console.log(mag1.getSummary());
+const mag1 = new Magazine("Mag 1", "john Mike", "2008", "june");
+console.log(mag1.getSummary());
+//Inherit Prototype
 Magazine.prototype = Object.create(Books.prototype);
 const mag2 = new Magazine("Mag 2", "Mike Jackson", "2008", "june");
 
