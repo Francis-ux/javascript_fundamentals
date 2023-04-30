@@ -30,6 +30,5 @@ class Magazines extends Books {
   }
 }
 
-const mag1 = new Magazines('Mag 1','John Doe','2008','June');
+const mag1 = new Magazines("Mag 1", "John Doe", "2008", "June");
 console.log(mag1);
-
