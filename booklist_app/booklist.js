@@ -30,10 +30,10 @@ class UI {
     const lists = document.querySelector("#book-list");
     const row = document.createElement("tr");
     row.innerHTML = `
-    <td>${book.title}</td>
-    <td>${book.author}</td>
-    <td>${book.isbn}</td>
-    <td><a href='#' class='btn btn-danger btn-sm delete'> X </a></td>
+    <td class='text-capitalize'>${book.title}</td>
+    <td class='text-capitalize'>${book.author}</td>
+    <td class='text-capitalize'>${book.isbn}</td>
+    <td class='text-capitalize'><a href='#' class='btn btn-danger btn-sm delete'> X </a></td>
     `;
     lists.appendChild(row);
   }
@@ -127,8 +127,7 @@ document.querySelector("#book-list").addEventListener("click", (e) => {
   UI.deleteBook(e.target);
 
   // Remove book from store
-  let isbn =
-    e.target.parentElement.parentElement.previousElementSibling.textContent;
+  let isbn = e.target.parentElement.previousElementSibling.textContent;
   Store.removeBook(isbn);
 
   // Show success message

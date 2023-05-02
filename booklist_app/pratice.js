@@ -23,7 +23,7 @@ class UI {
         isbn: "45545",
       },
     ];
-    const books = StoredBooks;
+    const books = Store.getBooks();
     // Loop through the array of books
     // Add the books to list
     books.forEach((book) => UI.addBookToList(book));
@@ -32,17 +32,16 @@ class UI {
     const lists = document.querySelector("#book-list");
     const row = document.createElement("tr");
     row.innerHTML = `
-    <td>${book.title}</td>
-    <td>${book.author}</td>
-    <td>${book.isbn}</td>
-    <td><a href='#' class='btn btn-danger btn-sm delete'> X </a></td>
+    <td class='text-capitalize'>${book.title}</td>
+    <td class='text-capitalize'>${book.author}</td>
+    <td class='text-capitalize'>${book.isbn}</td>
+    <td class='text-capitalize'><a href='#' class='btn btn-danger btn-sm delete'> X </a></td>
    `;
     lists.appendChild(row);
   }
   static deleteBook(e) {
     if (e.classList.contains("delete")) {
       e.parentElement.parentElement.remove();
-      UI.showAlert("Book Deleted", "success");
     }
   }
   static clearField() {
@@ -62,23 +61,36 @@ class UI {
 }
 // Store Class :Handle the local storage
 class Store {
-  static addBook(book) {
+  static getBooks() {
     let books;
+    //if there is no items of book in the local storage
     if (localStorage.getItem("books") === null) {
       books = [];
-      console.log("true");
     } else {
-      console.log("false");
+      // Converting the json string to an object
+      books = JSON.parse(localStorage.getItem("books"));
     }
+    return books;
+  }
+  static storeBook(book) {
+    const books = Store.getBooks();
+    //Push new book to the end of the array
+    books.push(book);
+    //Convert the javascript value to a json string
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+  static removeBook(isbn) {
+    const books = Store.getBooks();
+    books.forEach((book, index) => {
+      if (book.isbn === isbn) {
+        books.splice(index, 1);
+      }
+    });
+    localStorage.setItem("books", JSON.stringify(books));
   }
 }
 // Event:Display Books
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
-// Event:Delete books
-document.querySelector("#book-list").addEventListener("click", (e) => {
-  UI.deleteBook(e.target);
-});
-
 // Event: Add Book TO list
 document.querySelector("#book-form").addEventListener("submit", (e) => {
   // Prevent Default Behavior
@@ -92,8 +104,10 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
   } else {
     // Instantiate Book
     let book = new Book(title, author, isbn);
-
+    // Add book to list
     UI.addBookToList(book);
+    // Store book to local storage
+    Store.storeBook(book);
 
     UI.clearField();
 
@@ -101,4 +115,10 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
   }
 });
 
-Store.addBook("");
+// Event:Delete books
+document.querySelector("#book-list").addEventListener("click", (e) => {
+  UI.deleteBook(e.target);
+  let isbn = e.target.parentElement.previousElementSibling.textContent;
+  Store.removeBook(isbn);
+  UI.showAlert("Book Deleted", "success");
+});
