@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+   <link rel="stylesheet" href="font_awesome/css/all.min.css">
+</head>
+
+<body>
+   <div class="container">
+      <h1 class="text-center h1">
+         My Contacts
+      </h1>
+      <div class="form-group">
+         <input class="form-control" type="text" name="filter_input" placeholder="Search names..." id="filter_input">
+      </div>
+      <ul class="list-group mt-5 collection with-header" id="names">
+         <li class="list-group-item collection-header">
+            <p class="h1">A</p>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Ada</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Adama</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Akes Spurs</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Alex</a>
+         </li>
+         <li class="list-group-item collection-header">
+            <p class="h1">B</p>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Blessing</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Brother Bernard</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Bethel</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Brother hood</a>
+         </li>
+         <li class="list-group-item collection-header">
+            <p class="h1">C</p>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Clinton</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Clever</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Collins</a>
+         </li>
+         <li class="list-group-item collection-item">
+            <a href="#" class="text-decoration-none">Clement</a>
+         </li>
+      </ul>
+
+   </div>
+   <script>
+      // Get input element
+      let filterInput = document.getElementById("filter_input");
+      // Add event listener
+      filterInput.addEventListener("keyup", filterNames);
+      function filterNames() {
+         // Get value of the input
+         let filterValue = document.getElementById("filter_input").value.toUpperCase();
+         // Get name ul
+         let ul = document.getElementById("names");
+         // Get li from ul
+         let li = ul.querySelectorAll("li.collection-item");
+         // Loop through collection items lis
+         for (let i = 0; i < li.length; i++) {
+            // To get the current link we append [0] to it
+            let a = li[i].getElementsByTagName('a')[0];
+            // if matched 
+            // if it matches one of the letters in the name
+            // the indexof get the current position of the value if found
+            // so in this case we checking if the value found is equal to negative one which means nothing was found
+            if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+               li[i].style.display = '';
+            } else {
+               li[i].style.display = 'none';
+            }
+         }
+
+      }
+   </script>
+</body>
+
+</html>
